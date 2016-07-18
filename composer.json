@@ -1,0 +1,19 @@
+{
+	"name": "manulaiko/php-consistentor",
+	"type": "library",
+	"description": "The easies way to deal with PHP function name inconsistency",
+	"keywords": ["php", "function", "consisntency", "naming", "functions", "library", "tool", "tools"],
+	"license": "GNU",
+	"authors": [
+		{
+            "name": "Manulaiko",
+            "email": "manulaiko@gmail.com"
+        }
+	],
+	"require": {
+		"php": ">=5.3"
+    },
+	"autoload": {
+		"files": ["src/PHPConsistentor.php"]
+	}
+}
