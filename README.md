@@ -1,7 +1,7 @@
 # PHPConsistentor
 
 ## Content
-[Introduction](#Introduction)
+[Introduction](#introduction)
 
 
 a
