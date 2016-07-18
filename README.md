@@ -81,7 +81,7 @@ The easiest way is probably install it through composer, so just add the followi
 ```json
 {
     "require": {
-        "manulaiko/phpconsistentor": "^1.0"
+        "manulaiko/php-consistentor": "^1.0"
     }
 }
 
