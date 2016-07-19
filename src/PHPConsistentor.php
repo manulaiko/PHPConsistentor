@@ -438,6 +438,108 @@ class PHPConsistentor
         "bson_encode" => array(
             "bson"   => "bson",
             "encode" => "encode"
+        ),
+        "call_user_func" => array(
+            "call"     => "call",
+            "user"     => "user",
+            "function" => "function"
+        ),
+        "call_user_func_array" => array(
+            "call"     => "call",
+            "user"     => "user",
+            "function" => "function",
+            "array"    => "array"
+        ),
+        "call_user_method" => array(
+            "call"   => "call",
+            "user"   => "user",
+            "method" => "method"
+        ),
+        "call_user_method_array" => array(
+            "call"   => "call",
+            "user"   => "user",
+            "method" => "method",
+            "array"  => "array"
+        ),
+        "chdir" => array(
+            "change"    => "ch",
+            "directory" => "dir"
+        ),
+        "checkdate" => array(
+            "check" => "check",
+            "date"  => "date"
+        ),
+        "checkdnsrr" => array(
+            "check"   => "check",
+            "dns"     => "dns",
+            "records" => "rr"
+        ),
+        "chgrp" => array(
+            "change" => "ch",
+            "group"  => "grp"
+        ),
+        "chmod" => array(
+            "change" => "ch",
+            "mode"   => "mod"
+        ),
+        "chown" => array(
+            "change" => "ch",
+            "owner"  => "own"
+        ),
+        "chr" => array(
+            "character" => "chr"
+        ),
+        "chroot" => array(
+            "change" => "ch",
+            "root"   => "root"
+        ),
+        "chunk_split" => array(
+            "chunk" => "chunk",
+            "split" => "split"
+        ),
+        "class_alias" => array(
+            "class" => "class",
+            "alias" => "alias"
+        ),
+        "class_exists" => array(
+            "class"  => "class",
+            "exists" => "exists",
+        ),
+        "class_implements" => array(
+            "class"      => "class",
+            "implements" => "implements"
+        ),
+        "class_parents" => array(
+            "class"   => "class",
+            "parents" => "parents"
+        ),
+        "class_uses" => array(
+            "class" => "class",
+            "uses"  => "uses"
+        ),
+        "clearstatcache" => array(
+            "clear"  => "clear",
+            "status" => "status",
+            "cache"  => "cache"
+        ),
+        "closedir" => array(
+            "close"     => "close",
+            "directory" => "dir"
+        ),
+        "closelog" => array(
+            "close"  => "close",
+            "logger" => "log"
+        ),
+        "cos" => array(
+            "cosine" => "cos"
+        ),
+        "cosh" => array(
+            "cosine"     => "cos",
+            "hyperbolic" => "h"
+        ),
+        "create_function" => array(
+            "create"   => "create",
+            "function" => "function"
         )
     );
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
