@@ -815,9 +815,273 @@ class PHPConsistentor
         "fwrite" => array(
             "file"  => "f",
             "write" => "write"
-        )
+        ),
+        "getallheaders" => array(
+            "get"     => "get",
+            "all"     => "all",
+            "headers" => "headers"
+        ),
+        "getcwd" => array(
+            "get"       => "get",
+            "current"   => "c",
+            "working"   => "w",
+            "directory" => "d"
+        ),
+        "getdate" => array(
+            "get"  => "get",
+            "date" => "date"
+        ),
+        "getenv" => array(
+            "get"         => "get",
+            "environment" => "env",
+            "variable"    => ""
+        ),
+        "gethostbyaddr" => array(
+            "get"     => "get",
+            "host"    => "host",
+            "by"      => "by",
+            "address" => "addr"
+        ),
+        "gethostbyname" => array(
+            "get"  => "get",
+            "host" => "host",
+            "by"   => "by",
+            "name" => "name"
+        ),
+        "gethostbynamel" => array(
+            "get"  => "get",
+            "host" => "host",
+            "by"   => "by",
+            "name" => "name",
+            "list" => "l"
+        ),
+        "gethostname" => array(
+            "get"  => "get",
+            "host" => "host",
+            "name" => "name"
+        ),
+        "getimagesize" => array(
+            "get"   => "get",
+            "image" => "image",
+            "size"  => "size"
+        ),
+        "getimagesizefromstring" => array(
+            "get"    => "get",
+            "image"  => "image",
+            "size"   => "size",
+            "from"   => "from",
+            "string" => "string"
+        ),
+        "getlastmod" => array(
+            "get"          => "get",
+            "last"         => "last",
+            "modification" => "mod"
+        ),
+        "getmygid" => array(
+            "get"   => "get",
+            "owner" => "my",
+            "gid"   => "gid"
+        ),
+        "getmyinode" => array(
+            "get"    => "get",
+            "owner"  => "my",
+            "inode"  => "inode"
+        ),
+        "getmypid" => array(
+            "get"           => "get",
+            "owner"         => "my",
+            "process"       => "p",
+            "identificator" => "id"
+        ),
+        "getmyuid" => array(
+            "get"   => "get",
+            "owner" => "my",
+            "uid"   => "uid"
+        ),
+        "getopt" => array(
+            "get"    => "get",
+            "option" => "opt"
+        ),
+        "getprotobyname" => array(
+            "get"      => "get",
+            "protocol" => "proto",
+            "by"       => "by",
+            "name"     => "name"
+        ),
+        "getprotobynumber" => array(
+            "get"      => "get",
+            "protocol" => "protocol",
+            "by"       => "by",
+            "number"   => "number"
+        ),
+        "getrandmax" => array(
+            "get"    => "get",
+            "random" => "rand",
+            "max"    => "max",
+            "value"  => ""
+        ),
+        "getrusage" => array(
+            "get"      => "get",
+            "resource" => "r",
+            "usage"    => "usage"
+        ),
+        "getservbyname" => array(
+            "get"     => "get",
+            "service" => "serv",
+            "by"      => "by",
+            "name"    => "name"
+        ),
+        "gettext" => array(
+            "get"  => "get",
+            "text" => "text"
+        ),
+        "gettimeofday" => array(
+            "get"  => "get",
+            "time" => "time",
+            "of"   => "of",
+            "day"  => "day"
+        ),
+        "gettype" => array(
+            "get"  => "get",
+            "type" => "type"
+        ),
+        "get_browser" => array(
+            "get"     => "get",
+            "browser" => "browser"
+        ),
+        "get_called_class" => array(
+            "get"    => "get",
+            "called" => "called",
+            "class"  => "class"
+        ),
+        "get_cfg_var" => array(
+            "get"           => "get",
+            "configuration" => "cfg",
+            "variable"      => "var"
+        ),
+        "get_class" => array(
+            "get"   => "get",
+            "class" => "class"
+        ),
+        "get_class_methods" => array(
+            "get"     => "get",
+            "class"   => "class",
+            "methods" => "methods"
+        ),
+        "get_class_vars" => array(
+            "get"       => "get",
+            "class"     => "class",
+            "variables" => "vars"
+        ),
+        "get_current_user" => array(
+            "get"     => "get",
+            "current" => "current",
+            "user"    => "user"
+        ),
+        "get_declared_classes" => array(
+            "get"      => "get",
+            "declared" => "declared",
+            "classes"  => "classes"
+        ),
+        "get_declared_interfaces" => array(
+            "get"        => "get",
+            "declared"   => "declared",
+            "interfaces" => "interfaces"
+        ),
+        "get_declared_traits" => array(
+            "get"      => "get",
+            "declared" => "declared",
+            "traits"   => "traits"
+        ),
+        "get_defined_constants" => array(
+            "get"       => "get",
+            "defined"   => "define",
+            "constants" => "constants"
+        ),
+        "get_defined_functions" => array(
+            "get"       => "get",
+            "defined"   => "defined",
+            "functions" => "functions"
+        ),
+        "get_defined_vars" => array(
+            "get"     => "get",
+            "defined" => "defined",
+            "vars"    => "vars"
+        ),
+        "get_extensions_funcs" => array(
+            "get"        => "get",
+            "extensions" => "extensions",
+            "functions"  => "funcs"
+        ),
+        "get_headers" => array(
+            "get"     => "get",
+            "headers" => "headers"
+        ),
+        "get_html_translation_table" => array(
+            "get"         => "get",
+            "html"        => "html",
+            "translation" => "translation",
+            "table"       => "table"
+        ),
+        "get_included_files" => array(
+            "get"      => "get",
+            "included" => "included",
+            "files"    => "files"
+        ),
+        "get_loaded_extensions" => array(
+            "get"        => "get",
+            "loaded"     => "loaded",
+            "extensions" => "extensions"
+        ),
+        "get_include_path" => array(
+            "get"     => "get",
+            "include" => "include",
+            "path"    => "path"
+        ),
+        "get_magic_quotes_gpc" => array(
+            "get"    => "get",
+            "magic"  => "magic",
+            "quotes" => "quotes",
+            "gpc"    => "gpc"
+        ),
+        "get_magic_quotes_runtime" => array(
+            "get"     => "get",
+            "magic"   => "magic",
+            "quotes"  => "quotes",
+            "runtime" => "runtime"
+        ),
+        "get_meta_tags" => array(
+            "get"  => "get",
+            "meta" => "meta",
+            "tags" => "tags"
+        ),
+        "get_object_vars" => array(
+            "get"       => "get",
+            "object"    => "object",
+            "variables" => "vars"
+        ),
+        "get_parent_class" => array(
+            "get"    => "get",
+            "parent" => "parent",
+            "class"  => "class"
+        ),
+        "get_required_files" => array(
+            "get"      => "get",
+            "required" => "required",
+            "files"    => "files"
+        ),
+        "get_resources" => array(
+            "get"       => "get",
+            "resources" => "resources"
+        ),
+        "get_resource_type" => array(
+            "get"      => "get",
+            "resource" => "resource",
+            "type"     => "type"
+        ),
+
     );
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // End stupidly huge array with function names 'cause it's the easiest way to gather all functions and their aliases //
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
