@@ -91,8 +91,8 @@ Input:
 require_once("../src/PHPConsistentor.php");
 
 PHPConsistentor::init([
-    "word_cut" => PHPConsistentor::WORD_CUT_CUT,
-    "word_separator" => PHPConsistentor::WOR_SEPARATOR_CAMEL_CASE
+    "word_cut"       => PHPConsistentor::WORD_CUT_CUT,
+    "word_separator" => PHPConsistentor::WORD_SEPARATOR_CAMEL_CASE
 ]);
 ```
 
@@ -155,7 +155,7 @@ Input:
 require_once("../src/PHPConsistentor.php");
 
 PHPConsistentor::init([
-    "word_separator" => PHPConsistentor::WOR_SEPARATOR_CAMEL_CASE
+    "word_separator" => PHPConsistentor::WORD_SEPARATOR_CAMEL_CASE
 ]);
 ```
 
