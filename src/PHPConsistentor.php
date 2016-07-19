@@ -412,8 +412,6 @@ class PHPConsistentor
                 \$args
             );
         }");
-
-        echo "Alias created: {$new} -> {$old}\n";
     }
 
     /**
