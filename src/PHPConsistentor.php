@@ -68,6 +68,13 @@ class PHPConsistentor
      * @var string
      */
     const TO_2_2 = "2";
+
+    /**
+     * Don't translates `to` and keeps original
+     *
+     * @var string
+     */
+    const TO_2_DEFAULT = "to_default";
     /////////////////////////////////
     // End Configuration Constants //
     /////////////////////////////////
@@ -89,12 +96,25 @@ class PHPConsistentor
          * "function_name" => [
          * 	    "function"   => "func",
          * 	    "name"       => "name",
-         * 		"_WILDCARD_" => "function%to%name"
+         * 		"_WILDCARD_" => ""
          * ]
          *
          * Each index is an array of type `$key (full word) => $value (short word)` with the words of function's name
          *
-         * The `_WILDCARD_` index is a string that shows where are the `to` words
+         * The `_WILDCARD_` index is a string that shows where are the `to` words, the value is the default type (either `2`, `to` or nothing)
+         *
+         * Example:
+         *
+         *     "hex2bin" => [
+         *         "hexadecimal" => "hex",
+         *         "_WILDCARD_"  => "2",
+         *         "binary"      => "bin"
+         *     ],
+         *     "hexdec" => [
+         *         "hexadecimal" => "hex",
+         *         "_WILDCARD_"  => "",
+         *         "decimal"     => "dec"
+         *     ]
          *
          * @see https://secure.php.net/manual/en/indexes.functions.php for the list of functions
          */
@@ -402,13 +422,13 @@ class PHPConsistentor
             "convert" => "convert"
         ),
         "bin2hex" => array(
-            "_WILDCARD_"  => "bin%to%hex",
             "binary"      => "bin",
+            "_WILDCARD_"  => "2",
             "hexadecimal" => "hex"
         ),
         "bindec" => array(
-            "_WILDCARD_" => "bin%to%dec",
             "binary"     => "bin",
+            "_WILDCARD_" => "",
             "decimal"    => "dec"
         ),
         "bindtextdomain" => array(
@@ -542,23 +562,23 @@ class PHPConsistentor
             "function" => "function"
         ),
         "decbin" => array(
-            "_WILDCARD_" => "dec%to%bin",
             "decimal"    => "dec",
+            "_WILDCARD_" => "",
             "binary"     => "bin"
         ),
         "dechex" => array(
-            "_WILDCARD_"  => "dec%to%hex",
             "decimal"     => "dec",
+            "_WILDCARD_"  => "",
             "hexadecimal" => "hex"
         ),
         "decoct" => array(
-            "_WILDCARD_" => "dec%to%oct",
             "decimal"    => "dec",
+            "_WILDCARD_" => "",
             "octal"      => "oct"
         ),
         "deg2rad" => array(
-            "_WILDCARD_" => "deg%to%rad",
             "degree"     => "deg",
+            "_WILDCARD_" => "2",
             "radian"     => "rad"
         ),
         "dir" => array(
@@ -1183,6 +1203,18 @@ class PHPConsistentor
             $new = "";
 
             foreach($function as $key => $value) {
+                if($key == "_WILDCARD_") {
+                    if($configuration["to_2"] == PHPConsistentor::TO_2_TO) {
+                        $key   = "to";
+                        $value = "to";
+                    } else if($configuration["to_2"] == PHPConsistentor::TO_2_2) {
+                        $key   = "2";
+                        $value = "2";
+                    } else {
+                        $key = $value;
+                    }
+                }
+
                 if($configuration["word_separator"] == PHPConsistentor::WORD_SEPARATION_UNDERSCORE) {
                     if($configuration["word_cut"] == PHPConsistentor::WORD_CUT_NO_CUT) {
                         $word = $key;
@@ -1211,17 +1243,13 @@ class PHPConsistentor
                             $new .= ucfirst($word);
                         }
                     }
-                } else if($configuration["word_separator"] == PHPConsistentor::WORD_SEPARATION_NO_SEPARATION) {
+                } else {
                     if($configuration["word_cut"] == PHPConsistentor::WORD_CUT_NO_CUT && !empty($key)) {
                         $new .= $key;
                     } else if(!empty($value)){
                         $new .= $value;
                     }
                 }
-
-                /**
-                 * @todo Add _WILDCARD_ support
-                 */
             }
 
             self::alias($old, $new);
@@ -1270,7 +1298,8 @@ class PHPConsistentor
                 empty($configuration["to_2"]) ||
                 !in_array($configuration["to_2"], array(
                     PHPConsistentor::TO_2_TO,
-                    PHPConsistentor::TO_2_2
+                    PHPConsistentor::TO_2_2,
+                    PHPConsistentor::TO_2_DEFAULT
                 ))
             ) {
                 $configuration["to_2"] = PHPConsistentor::TO_2_TO;
