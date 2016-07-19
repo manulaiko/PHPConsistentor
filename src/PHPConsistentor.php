@@ -581,6 +581,28 @@ class PHPConsistentor
         "doubleval" => array(
             "double" => "double",
             "value"  => "val"
+        ),
+        "easter_date" => array(
+            "easter" => "easter",
+            "date"   => "date"
+        ),
+        "easter_days" => array(
+            "easter" => "easter",
+            "days"   => "days"
+        ),
+        "eval" => array(
+            "evaluate" => "eval"
+        ),
+        "exec" => array(
+            "execute" => "exec"
+        ),
+        "exp" => array(
+            "exponent" => "exp"
+        ),
+        "expm1" => array(
+            "exponent" => "exp",
+            "minus"    => "m",
+            "one"      => "1"
         )
     );
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
