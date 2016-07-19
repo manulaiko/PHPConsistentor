@@ -385,6 +385,60 @@ class PHPConsistentor
             "tangent"    => "tan",
             "hyperbolic" => "h"
         ),
+        "base64_decode" => array(
+            "base64" => "base64",
+            "decode" => "decode"
+        ),
+        "base64_encode" => array(
+            "base64" => "base64",
+            "encode" => "encode"
+        ),
+        "basename" => array(
+            "base" => "base",
+            "name" => "name"
+        ),
+        "base_convert" => array(
+            "base"    => "base",
+            "convert" => "convert"
+        ),
+        "bin2hex" => array(
+            "_WILDCARD_"  => "bin%to%hex",
+            "binary"      => "bin",
+            "hexadecimal" => "hex"
+        ),
+        "bindec" => array(
+            "_WILDCARD_" => "bin%to%dec",
+            "binary"     => "bin",
+            "decimal"    => "dec"
+        ),
+        "bindtextdomain" => array(
+            "bind"   => "bind",
+            "text"   => "text",
+            "domain" => "domain"
+        ),
+        "bind_textdomain_codeset" => array(
+            "bind"   => "bind",
+            "text"   => "text",
+            "domain" => "domain",
+            "code"   => "code",
+            "set"    => "set"
+        ),
+        "blenc_encrypt" => array(
+            "blenc"   => "blenc",
+            "encrypt" => "encypt"
+        ),
+        "boolval" => array(
+            "boolean" => "bool",
+            "value"   => "val"
+        ),
+        "bson_decode" => array(
+            "bson"   => "bson",
+            "decode" => "decode"
+        ),
+        "bson_encode" => array(
+            "bson"   => "bson",
+            "encode" => "encode"
+        )
     );
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // End stupidly huge array with function names 'cause it's the easiest way to gather all functions and their aliases //
