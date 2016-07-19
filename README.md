@@ -81,10 +81,16 @@ The easiest way is probably install it through composer, so just add the followi
 ```json
 {
     "require": {
-        "manulaiko/php-consistentor": "^1.0"
+        "manulaiko/php-consistentor": "dev-master"
     }
 }
 
+```
+
+Or by executing the followin command:
+
+```
+composer require manulaiko/php-consistentor:dev-master
 ```
 
 ### Alexya Framework
