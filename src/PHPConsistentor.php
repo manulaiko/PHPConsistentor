@@ -1079,7 +1079,67 @@ class PHPConsistentor
             "resource" => "resource",
             "type"     => "type"
         ),
-
+        "headers_list" => array(
+            "headers" => "headers",
+            "list"    => "list"
+        ),
+        "headers_sent" => array(
+            "headers" => "headers",
+            "sent"    => "sent"
+        ),
+        "header_register_callback" => array(
+            "header"   => "header",
+            "register" => "register",
+            "callback" => "callback"
+        ),
+        "header_remove" => array(
+            "header" => "header",
+            "remove" => "remove"
+        ),
+        "hebrev" => array(
+            "hebrew"     => "hebre",
+            "_WILDCARD_" => "",
+            "visual"     => "v"
+        ),
+        "hebrevc" => array(
+            "hebrew"     => "hebre",
+            "_WILDCARD_" => "",
+            "visual"     => "v",
+            "conversion" => "c"
+        ),
+        "hex2bin" => array(
+            "hexadecimal" => "hex",
+            "_WILDCARD_"  => "2",
+            "binary"      => "bin"
+        ),
+        "hexdec" => array(
+            "hexadecimal" => "hex",
+            "_WILDCARD_"  => "",
+            "decimal"     => "dec"
+        ),
+        "htmlentities" => array(
+            "html"     => "html",
+            "entities" => "entities"
+        ),
+        "htmlspecialchars" => array(
+            "html"         => "html",
+            "special"      => "special",
+            "characters"   => "chars"
+        ),
+        "htmlspecialchars_decode" => array(
+            "html"       => "html",
+            "special"    => "special",
+            "characters" => "chars",
+            "decode"     => "decode"
+        ),
+        "html_entity_decode" => array(
+            "html"   => "html",
+            "entity" => "entity",
+            "decode" => "decode"
+        ),
+        "hypot" => array(
+            "hypotenuse" => "hypot"
+        )
     );
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // End stupidly huge array with function names 'cause it's the easiest way to gather all functions and their aliases //
