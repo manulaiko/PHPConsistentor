@@ -603,6 +603,218 @@ class PHPConsistentor
             "exponent" => "exp",
             "minus"    => "m",
             "one"      => "1"
+        ),
+        "feof" => array(
+            "file" => "f",
+            "end"  => "e",
+            "of"   => "o",
+            "file" => "f"
+        ),
+        "fflush" => array(
+            "file"  => "f",
+            "flush" => "flush"
+        ),
+        "fgetc" => array(
+            "file"      => "f",
+            "get"       => "get",
+            "character" => "c"
+        ),
+        "fileatime" => array(
+            "file"   => "file",
+            "access" => "a",
+            "time"   => "time"
+        ),
+        "filectime" => array(
+            "file"   => "file",
+            "change" => "c",
+            "time"   => "time"
+        ),
+        "filegroup" => array(
+            "file"  => "file",
+            "group" => "group"
+        ),
+        "fileinode" => array(
+            "file"  => "file",
+            "inode" => "inode"
+        ),
+        "filemtime" => array(
+            "file"         => "file",
+            "modification" => "m",
+            "time"         => "time"
+        ),
+        "fileowner" => array(
+            "file"  => "file",
+            "owner" => "owner"
+        ),
+        "fileperms" => array(
+            "file"        => "file",
+            "permissions" => "perms"
+        ),
+        "filesize" => array(
+            "file" => "file",
+            "size" => "size"
+        ),
+        "filetype" => array(
+            "file" => "file",
+            "type" => "type"
+        ),
+        "file_exists" => array(
+            "file"   => "file",
+            "exists" => "exists"
+        ),
+        "file_get_contents" => array(
+            "file"     => "file",
+            "get"      => "get",
+            "contents" => "contents"
+        ),
+        "file_put_contents" => array(
+            "file"     => "file",
+            "put"      => "put",
+            "contents" => "contents"
+        ),
+        "filter_has_var" => array(
+            "filter" => "filter",
+            "hash"   => "has",
+            "var"    => "var"
+        ),
+        "filter_id" => array(
+            "filter"     => "filter",
+            "identifier" => "id"
+        ),
+        "filter_input" => array(
+            "filter" => "filter",
+            "input"  => "input"
+        ),
+        "filter_input_array" => array(
+            "filter" => "filter",
+            "input"  => "input",
+            "array"  => "array"
+        ),
+        "filter_list" => array(
+            "filter" => "filter",
+            "list"   => "list"
+        ),
+        "filter_var" => array(
+            "filter"   => "filter",
+            "variable" => "var"
+        ),
+        "finfo_close" => array(
+            "file"        => "f",
+            "information" => "info",
+            "close"       => "close"
+        ),
+        "finfo_open" => array(
+            "file"        => "f",
+            "information" => "info",
+            "open"        => "open"
+        ),
+        "floatval" => array(
+            "float" => "float",
+            "value" => "val"
+        ),
+        "flock" => array(
+            "file" => "f",
+            "lock" => "lock"
+        ),
+        "fmod" => array(
+            "float"  => "f",
+            "modulo" => "mod"
+        ),
+        "fnmatch" => array(
+            "file"  => "f",
+            "name"  => "n",
+            "match" => "match"
+        ),
+        "fopen" => array(
+            "file" => "f",
+            "open" => "open"
+        ),
+        "forward_static_call" => array(
+            "forward" => "forward",
+            "static"  => "static",
+            "call"    => "call"
+        ),
+        "forward_static_call_array" => array(
+            "forward" => "forward",
+            "static"  => "static",
+            "call"    => "call",
+            "array"   => "array"
+        ),
+        "fpassthru" => array(
+            "file" => "f",
+            "pass" => "pass",
+            "thru" => "thru"
+        ),
+        "fprintf" => array(
+            "file"      => "f",
+            "print"     => "print",
+            "formatted" => "f"
+        ),
+        "fputcsv" => array(
+            "file" => "f",
+            "put"  => "put",
+            "csv"  => "csv"
+        ),
+        "fputs" => array(
+            "file" => "f",
+            "puts" => "puts"
+        ),
+        "fread" => array(
+            "file" => "f",
+            "read" => "read"
+        ),
+        "fscanf" => array(
+            "file"   => "f",
+            "scan"   => "scan",
+            "format" => "f"
+        ),
+        "fseek" => array(
+            "file" => "f",
+            "seek" => "seek"
+        ),
+        "fsockopen" => array(
+            "file"   => "f",
+            "socket" => "sock",
+            "open"   => "open"
+        ),
+        "fstat" => array(
+            "file"       => "f",
+            "statistics" => "stat"
+        ),
+        "ftell" => array(
+            "file" => "f",
+            "tell" => "tell"
+        ),
+        "ftok" => array(
+            "file"  => "f",
+            "token" => "tok"
+        ),
+        "ftruncate" => array(
+            "file"     => "f",
+            "truncate" => "truncate"
+        ),
+        "function_exists" => array(
+            "function" => "function",
+            "exists"   => "exists"
+        ),
+        "func_get_arg" => array(
+            "function" => "func",
+            "get"      => "get",
+            "argument" => "arg"
+        ),
+        "func_get_args" => array(
+            "function"  => "func",
+            "get"       => "get",
+            "arguments" => "args"
+        ),
+        "func_num_args" => array(
+            "function"  => "func",
+            "number"    => "num",
+            "arguments" => "args"
+        ),
+        "fwrite" => array(
+            "file"  => "f",
+            "write" => "write"
         )
     );
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
