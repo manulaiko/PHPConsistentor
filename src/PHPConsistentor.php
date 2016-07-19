@@ -540,6 +540,47 @@ class PHPConsistentor
         "create_function" => array(
             "create"   => "create",
             "function" => "function"
+        ),
+        "decbin" => array(
+            "_WILDCARD_" => "dec%to%bin",
+            "decimal"    => "dec",
+            "binary"     => "bin"
+        ),
+        "dechex" => array(
+            "_WILDCARD_"  => "dec%to%hex",
+            "decimal"     => "dec",
+            "hexadecimal" => "hex"
+        ),
+        "decoct" => array(
+            "_WILDCARD_" => "dec%to%oct",
+            "decimal"    => "dec",
+            "octal"      => "oct"
+        ),
+        "deg2rad" => array(
+            "_WILDCARD_" => "deg%to%rad",
+            "degree"     => "deg",
+            "radian"     => "rad"
+        ),
+        "dir" => array(
+            "directory" => "dir"
+        ),
+        "dirname" => array(
+            "directory" => "dir",
+            "name"      => "name"
+        ),
+        "disk_free_space" => array(
+            "disk"  => "disk",
+            "free"  => "free",
+            "space" => "space"
+        ),
+        "disk_total_space" => array(
+            "disk"  => "disk",
+            "total" => "total",
+            "space" => "space"
+        ),
+        "doubleval" => array(
+            "double" => "double",
+            "value"  => "val"
         )
     );
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
