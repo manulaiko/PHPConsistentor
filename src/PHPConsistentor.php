@@ -1159,6 +1159,165 @@ class PHPConsistentor
         ),
         "hypot" => array(
             "hypotenuse" => "hypot"
+        ),
+        "ini_alter" => array(
+            "ini"   => "ini",
+            "alter" => "alter"
+        ),
+        "init_get" => array(
+            "ini" => "ini",
+            "get" => "get"
+        ),
+        "ini_get_all" => array(
+            "ini" => "ini",
+            "get" => "get",
+            "all" => "all"
+        ),
+        "ini_restore" => array(
+            "ini"     => "ini",
+            "restore" => "restore"
+        ),
+        "ini_set" => array(
+            "ini" => "ini",
+            "set" => "set"
+        ),
+        "intdiv" => array(
+            "integer"  => "int",
+            "division" => "div"
+        ),
+        "interface_exists" => array(
+            "interface" => "interface",
+            "exists"    => "exists"
+        ),
+        "intval" => array(
+            "integer" => "int",
+            "value"   => "val"
+        ),
+        "in_array" => array(
+            "in"    => "in",
+            "array" => "array"
+        ),
+        "ip2long" => array(
+            "ip"         => "ip",
+            "_WILDCARD_" => "2",
+            "long"       => "long"
+        ),
+        "isset" => array(
+            "is"  => "is",
+            "set" => "set"
+        ),
+        "is_a" => array(
+            "is" => "is",
+            "a"  => "a"
+        ),
+        "is_array" => array(
+            "is"    => "is",
+            "array" => "array"
+        ),
+        "is_bool" => array(
+            "is"      => "is",
+            "boolean" => "bool"
+        ),
+        "is_callable" => array(
+            "is"       => "is",
+            "callable" => "callable"
+        ),
+        "is_dir" => array(
+            "is"        => "is",
+            "directory" => "dir"
+        ),
+        "is_double" => array(
+            "is"     => "is",
+            "double" => "double"
+        ),
+        "is_executable" => array(
+            "is"         => "is",
+            "executable" => "executable"
+        ),
+        "is_file" => array(
+            "is"   => "is",
+            "file" => "file"
+        ),
+        "is_finite" => array(
+            "is"     => "is",
+            "finite" => "finite"
+        ),
+        "is_float" => array(
+            "is"    => "is",
+            "float" => "float"
+        ),
+        "is_infinite" => array(
+            "is"       => "is",
+            "infinite" => "infinite"
+        ),
+        "is_int" => array(
+            "is"      => "is",
+            "integer" => "int"
+        ),
+        "is_link" => array(
+            "is"   => "is",
+            "link" => "link"
+        ),
+        "is_nan" => array(
+            "is"     => "is",
+            "not"    => "n",
+            "a"      => "a",
+            "number" => "n"
+        ),
+        "is_null" => array(
+            "is"   => "is",
+            "null" => "null"
+        ),
+        "is_numeric" => array(
+            "is"      => "is",
+            "numeric" => "numeric"
+        ),
+        "is_object" => array(
+            "is"     => "is",
+            "object" => "object"
+        ),
+        "is_readable" => array(
+            "is"       => "is",
+            "readable" => "readable"
+        ),
+        "is_real" => array(
+            "is"   => "is",
+            "real" => "real"
+        ),
+        "is_resource" => array(
+            "is"       => "is",
+            "resource" => "resource"
+        ),
+        "is_scalar" => array(
+            "is"     => "is",
+            "scalar" => "scalar"
+        ),
+        "is_soap_fault" => array(
+            "is"    => "is",
+            "soap"  => "soap",
+            "fault" => "fault"
+        ),
+        "is_subclass_of" => array(
+            "is"       => "is",
+            "subclass" => "subclass",
+            "of"       => "of"
+        ),
+        "is_tainted" => array(
+            "is"      => "is",
+            "tainted" => "tainted"
+        ),
+        "is_uploaded_file" => array(
+            "is"       => "is",
+            "uploaded" => "uploaded",
+            "file"     => "file"
+        ),
+        "is_writable" => array(
+            "is"       => "is",
+            "writable" => "writable"
+        ),
+        "is_writeable" => array(
+            "is"        => "is",
+            "writeable" => "writeable"
         )
     );
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
