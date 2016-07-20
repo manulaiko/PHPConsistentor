@@ -116,6 +116,8 @@ class PHPConsistentor
          *         "decimal"     => "dec"
          *     ]
          *
+         * If the index is a string, PHPConsistentor will assume is the function name with full words in snake_case (e.g. any of `is_*` functions)
+         *
          * @see https://secure.php.net/manual/en/indexes.functions.php for the list of functions
          */
         "abs" => array(
@@ -140,29 +142,11 @@ class PHPConsistentor
             "add"     => "add",
             "slashes" => "slashes"
         ),
-        "array_change_key_case" => array(
-            "array"  => "array",
-            "change" => "change",
-            "key"    => "key",
-            "case"   => "case"
-        ),
-        "array_chunk" => array(
-            "array" => "array",
-            "chunk" => "chunk"
-        ),
-        "array_column" => array(
-            "array"  => "array",
-            "column" => "column"
-        ),
-        "array_combine" => array(
-            "array"   => "array",
-            "combine" => "combine"
-        ),
-        "array_count_values" => array(
-            "array"  => "array",
-            "count"  => "count",
-            "values" => "values"
-        ),
+        "array_change_key_case",
+        "array_chunk",
+        "array_column",
+        "array_combine",
+        "array_count_values",
         "array_diff" => array(
             "array"       => "array",
             "difference"  => "diff"
@@ -189,33 +173,16 @@ class PHPConsistentor
             "user"       => "u",
             "key"        => "key"
         ),
-        "array_fill" => array(
-            "array" => "array",
-            "fill"  => "fill"
-        ),
-        "array_fill_keys" => array(
-            "array" => "array",
-            "fill"  => "fill",
-            "keys"  => "keys"
-        ),
-        "array_flip" => array(
-            "array" => "array",
-            "flip"  => "flip"
-        ),
-        "array_intersect" => array(
-            "array"     => "array",
-            "intersect" => "intersect",
-        ),
+        "array_fill",
+        "array_fill_keys",
+        "array_flip",
+        "array_intersect",
         "array_intersect_assoc" => array(
             "array"       => "array",
             "intersect"   => "intersect",
             "associative" => "assoc"
         ),
-        "array_intersect_key" => array(
-            "array"     => "array",
-            "intersect" => "intersect",
-            "key"       => "key"
-        ),
+        "array_intersect_key",
         "array_intersect_uassoc" => array(
             "array"       => "array",
             "intersect"   => "intersect",
@@ -228,86 +195,32 @@ class PHPConsistentor
             "user"      => "u",
             "key"       => "key"
         ),
-        "array_keys" => array(
-            "array" => "array",
-            "keys"  => "keys"
-        ),
-        "array_key_exists" => array(
-            "array"  => "array",
-            "key"    => "key",
-            "exists" => "exists"
-        ),
-        "array_map" => array(
-            "array" => "array",
-            "map"   => "map"
-        ),
-        "array_merge" => array(
-            "array" => "array",
-            "merge" => "merge"
-        ),
-        "array_merge_recursive" => array(
-            "array"     => "array",
-            "merge"     => "merge",
-            "recursive" => "recursive"
-        ),
+        "array_keys",
+        "array_key_exists",
+        "array_map",
+        "array_merge",
+        "array_merge_recursive",
         "array_multisort" => array(
             "array" => "array",
             "multi" => "multi",
             "sort"  => "sort"
         ),
-        "array_pad" => array(
-            "array" => "array",
-            "pad"   => "pad"
-        ),
-        "array_pop" => array(
-            "array" => "array",
-            "pop"   => "pop"
-        ),
-        "array_product" => array(
-            "array"   => "array",
-            "product" => "product"
-        ),
-        "array_push" => array(
-            "array" => "array",
-            "push"  => "push"
-        ),
+        "array_pad",
+        "array_pop",
+        "array_product",
+        "array_push",
         "array_rand" => array(
             "array"  => "array",
             "random" => "rand"
         ),
-        "array_reduce" => array(
-            "array"  => "array",
-            "reduce" => "reduce"
-        ),
-        "array_replace" => array(
-            "array"   => "array",
-            "replace" => "replace"
-        ),
-        "array_replace_recursive" => array(
-            "array"     => "array",
-            "replace"   => "replace",
-            "recursive" => "recursive"
-        ),
-        "array_reverse" => array(
-            "array"   => "array",
-            "reverse" => "reverse"
-        ),
-        "array_search" => array(
-            "array"  => "array",
-            "search" => "search"
-        ),
-        "array_shift" => array(
-            "array" => "array",
-            "shift" => "shift"
-        ),
-        "array_slice" => array(
-            "array" => "array",
-            "slice" => "slice"
-        ),
-        "array_splice" => array(
-            "array"  => "array",
-            "splice" => "splice"
-        ),
+        "array_reduce",
+        "array_replace",
+        "array_replace_recursive",
+        "array_reverse",
+        "array_search",
+        "array_shift",
+        "array_slice",
+        "array_splice",
         "array_sum" => array(
             "array"    => "array",
             "sumatory" => "sum"
@@ -348,27 +261,11 @@ class PHPConsistentor
             "user"        => "u",
             "associative" => "assoc"
         ),
-        "array_unique" => array(
-            "array"  => "array",
-            "unique" => "unique"
-        ),
-        "array_unshift" => array(
-            "array"   => "array",
-            "unshift" => "unshift"
-        ),
-        "array_values" => array(
-            "array"  => "array",
-            "values" => "values"
-        ),
-        "array_walk" => array(
-            "array" => "array",
-            "walk"  => "walk"
-        ),
-        "array_walk_recursive" => array(
-            "array"     => "array",
-            "walk"      => "walk",
-            "recursive" => "recursive"
-        ),
+        "array_unique",
+        "array_unshift",
+        "array_values",
+        "array_walk",
+        "array_walk_recursive",
         "arsort" => array(
             "array"   => "a",
             "reverse" => "r",
@@ -387,10 +284,7 @@ class PHPConsistentor
             "array" => "a",
             "sort"  => "sort"
         ),
-        "assert_options" => array(
-            "assert"  => "assert",
-            "options" => "options"
-        ),
+        "assert_options",
         "atan" => array(
             "arc"     => "a",
             "tangent" => "tan"
@@ -405,22 +299,13 @@ class PHPConsistentor
             "tangent"    => "tan",
             "hyperbolic" => "h"
         ),
-        "base64_decode" => array(
-            "base64" => "base64",
-            "decode" => "decode"
-        ),
-        "base64_encode" => array(
-            "base64" => "base64",
-            "encode" => "encode"
-        ),
+        "base64_decode",
+        "base64_encode",
         "basename" => array(
             "base" => "base",
             "name" => "name"
         ),
-        "base_convert" => array(
-            "base"    => "base",
-            "convert" => "convert"
-        ),
+        "base_convert",
         "bin2hex" => array(
             "binary"      => "bin",
             "_WILDCARD_"  => "2",
@@ -451,36 +336,21 @@ class PHPConsistentor
             "boolean" => "bool",
             "value"   => "val"
         ),
-        "bson_decode" => array(
-            "bson"   => "bson",
-            "decode" => "decode"
-        ),
-        "bson_encode" => array(
-            "bson"   => "bson",
-            "encode" => "encode"
-        ),
+        "bson_decode",
+        "bson_encode",
         "call_user_func" => array(
             "call"     => "call",
             "user"     => "user",
-            "function" => "function"
+            "function" => "func"
         ),
         "call_user_func_array" => array(
             "call"     => "call",
             "user"     => "user",
-            "function" => "function",
+            "function" => "func",
             "array"    => "array"
         ),
-        "call_user_method" => array(
-            "call"   => "call",
-            "user"   => "user",
-            "method" => "method"
-        ),
-        "call_user_method_array" => array(
-            "call"   => "call",
-            "user"   => "user",
-            "method" => "method",
-            "array"  => "array"
-        ),
+        "call_user_method",
+        "call_user_method_array",
         "chdir" => array(
             "change"    => "ch",
             "directory" => "dir"
@@ -513,26 +383,11 @@ class PHPConsistentor
             "change" => "ch",
             "root"   => "root"
         ),
-        "chunk_split" => array(
-            "chunk" => "chunk",
-            "split" => "split"
-        ),
-        "class_alias" => array(
-            "class" => "class",
-            "alias" => "alias"
-        ),
-        "class_exists" => array(
-            "class"  => "class",
-            "exists" => "exists",
-        ),
-        "class_implements" => array(
-            "class"      => "class",
-            "implements" => "implements"
-        ),
-        "class_parents" => array(
-            "class"   => "class",
-            "parents" => "parents"
-        ),
+        "chunk_split",
+        "class_alias",
+        "class_exists",
+        "class_implements",
+        "class_parents",
         "class_uses" => array(
             "class" => "class",
             "uses"  => "uses"
@@ -557,10 +412,7 @@ class PHPConsistentor
             "cosine"     => "cos",
             "hyperbolic" => "h"
         ),
-        "create_function" => array(
-            "create"   => "create",
-            "function" => "function"
-        ),
+        "create_function",
         "decbin" => array(
             "decimal"    => "dec",
             "_WILDCARD_" => "",
@@ -588,28 +440,14 @@ class PHPConsistentor
             "directory" => "dir",
             "name"      => "name"
         ),
-        "disk_free_space" => array(
-            "disk"  => "disk",
-            "free"  => "free",
-            "space" => "space"
-        ),
-        "disk_total_space" => array(
-            "disk"  => "disk",
-            "total" => "total",
-            "space" => "space"
-        ),
+        "disk_free_space",
+        "disk_total_space",
         "doubleval" => array(
             "double" => "double",
             "value"  => "val"
         ),
-        "easter_date" => array(
-            "easter" => "easter",
-            "date"   => "date"
-        ),
-        "easter_days" => array(
-            "easter" => "easter",
-            "days"   => "days"
-        ),
+        "easter_date",
+        "easter_days",
         "eval" => array(
             "evaluate" => "eval"
         ),
@@ -678,46 +516,22 @@ class PHPConsistentor
             "file" => "file",
             "type" => "type"
         ),
-        "file_exists" => array(
-            "file"   => "file",
-            "exists" => "exists"
-        ),
-        "file_get_contents" => array(
-            "file"     => "file",
-            "get"      => "get",
-            "contents" => "contents"
-        ),
-        "file_put_contents" => array(
-            "file"     => "file",
-            "put"      => "put",
-            "contents" => "contents"
-        ),
+        "file_exists",
+        "file_get_contents",
+        "file_put_contents",
         "filter_has_var" => array(
-            "filter" => "filter",
-            "hash"   => "has",
-            "var"    => "var"
+            "filter"   => "filter",
+            "hash"     => "has",
+            "variable" => "var"
         ),
         "filter_id" => array(
             "filter"     => "filter",
             "identifier" => "id"
         ),
-        "filter_input" => array(
-            "filter" => "filter",
-            "input"  => "input"
-        ),
-        "filter_input_array" => array(
-            "filter" => "filter",
-            "input"  => "input",
-            "array"  => "array"
-        ),
-        "filter_list" => array(
-            "filter" => "filter",
-            "list"   => "list"
-        ),
-        "filter_var" => array(
-            "filter"   => "filter",
-            "variable" => "var"
-        ),
+        "filter_input",
+        "filter_input_array",
+        "filter_list",
+        "filter_var",
         "finfo_close" => array(
             "file"        => "f",
             "information" => "info",
@@ -749,17 +563,8 @@ class PHPConsistentor
             "file" => "f",
             "open" => "open"
         ),
-        "forward_static_call" => array(
-            "forward" => "forward",
-            "static"  => "static",
-            "call"    => "call"
-        ),
-        "forward_static_call_array" => array(
-            "forward" => "forward",
-            "static"  => "static",
-            "call"    => "call",
-            "array"   => "array"
-        ),
+        "forward_static_call",
+        "forward_static_call_array",
         "fpassthru" => array(
             "file" => "f",
             "pass" => "pass",
@@ -813,10 +618,7 @@ class PHPConsistentor
             "file"     => "f",
             "truncate" => "truncate"
         ),
-        "function_exists" => array(
-            "function" => "function",
-            "exists"   => "exists"
-        ),
+        "function_exists",
         "func_get_arg" => array(
             "function" => "func",
             "get"      => "get",
@@ -965,157 +767,53 @@ class PHPConsistentor
             "get"  => "get",
             "type" => "type"
         ),
-        "get_browser" => array(
-            "get"     => "get",
-            "browser" => "browser"
-        ),
-        "get_called_class" => array(
-            "get"    => "get",
-            "called" => "called",
-            "class"  => "class"
-        ),
+        "get_browser",
+        "get_called_class",
         "get_cfg_var" => array(
             "get"           => "get",
             "configuration" => "cfg",
             "variable"      => "var"
         ),
-        "get_class" => array(
-            "get"   => "get",
-            "class" => "class"
-        ),
-        "get_class_methods" => array(
-            "get"     => "get",
-            "class"   => "class",
-            "methods" => "methods"
-        ),
+        "get_class",
+        "get_class_methods",
         "get_class_vars" => array(
             "get"       => "get",
             "class"     => "class",
             "variables" => "vars"
         ),
-        "get_current_user" => array(
-            "get"     => "get",
-            "current" => "current",
-            "user"    => "user"
-        ),
-        "get_declared_classes" => array(
-            "get"      => "get",
-            "declared" => "declared",
-            "classes"  => "classes"
-        ),
-        "get_declared_interfaces" => array(
-            "get"        => "get",
-            "declared"   => "declared",
-            "interfaces" => "interfaces"
-        ),
-        "get_declared_traits" => array(
-            "get"      => "get",
-            "declared" => "declared",
-            "traits"   => "traits"
-        ),
-        "get_defined_constants" => array(
-            "get"       => "get",
-            "defined"   => "define",
-            "constants" => "constants"
-        ),
-        "get_defined_functions" => array(
-            "get"       => "get",
-            "defined"   => "defined",
-            "functions" => "functions"
-        ),
+        "get_current_user",
+        "get_declared_classes",
+        "get_declared_interfaces",
+        "get_declared_traits",
+        "get_defined_constants",
+        "get_defined_functions",
         "get_defined_vars" => array(
-            "get"     => "get",
-            "defined" => "defined",
-            "vars"    => "vars"
+            "get"        => "get",
+            "defined"    => "defined",
+            "variabless" => "vars"
         ),
         "get_extensions_funcs" => array(
             "get"        => "get",
             "extensions" => "extensions",
             "functions"  => "funcs"
         ),
-        "get_headers" => array(
-            "get"     => "get",
-            "headers" => "headers"
-        ),
-        "get_html_translation_table" => array(
-            "get"         => "get",
-            "html"        => "html",
-            "translation" => "translation",
-            "table"       => "table"
-        ),
-        "get_included_files" => array(
-            "get"      => "get",
-            "included" => "included",
-            "files"    => "files"
-        ),
-        "get_loaded_extensions" => array(
-            "get"        => "get",
-            "loaded"     => "loaded",
-            "extensions" => "extensions"
-        ),
-        "get_include_path" => array(
-            "get"     => "get",
-            "include" => "include",
-            "path"    => "path"
-        ),
-        "get_magic_quotes_gpc" => array(
-            "get"    => "get",
-            "magic"  => "magic",
-            "quotes" => "quotes",
-            "gpc"    => "gpc"
-        ),
-        "get_magic_quotes_runtime" => array(
-            "get"     => "get",
-            "magic"   => "magic",
-            "quotes"  => "quotes",
-            "runtime" => "runtime"
-        ),
-        "get_meta_tags" => array(
-            "get"  => "get",
-            "meta" => "meta",
-            "tags" => "tags"
-        ),
-        "get_object_vars" => array(
-            "get"       => "get",
-            "object"    => "object",
-            "variables" => "vars"
-        ),
-        "get_parent_class" => array(
-            "get"    => "get",
-            "parent" => "parent",
-            "class"  => "class"
-        ),
-        "get_required_files" => array(
-            "get"      => "get",
-            "required" => "required",
-            "files"    => "files"
-        ),
-        "get_resources" => array(
-            "get"       => "get",
-            "resources" => "resources"
-        ),
-        "get_resource_type" => array(
-            "get"      => "get",
-            "resource" => "resource",
-            "type"     => "type"
-        ),
-        "headers_list" => array(
-            "headers" => "headers",
-            "list"    => "list"
-        ),
-        "headers_sent" => array(
-            "headers" => "headers",
-            "sent"    => "sent"
-        ),
-        "header_register_callback" => array(
-            "header"   => "header",
-            "register" => "register",
-            "callback" => "callback"
-        ),
-        "header_remove" => array(
-            "header" => "header",
-            "remove" => "remove"
-        ),
+        "get_headers",
+        "get_html_translation_table",
+        "get_included_files",
+        "get_loaded_extensions",
+        "get_include_path",
+        "get_magic_quotes_gpc",
+        "get_magic_quotes_runtime",
+        "get_meta_tags",
+        "get_object_vars",
+        "get_parent_class",
+        "get_required_files",
+        "get_resources",
+        "get_resource_type",
+        "headers_list",
+        "headers_sent",
+        "header_register_callback",
+        "header_remove",
         "hebrev" => array(
             "hebrew"     => "hebre",
             "_WILDCARD_" => "",
@@ -1152,51 +850,25 @@ class PHPConsistentor
             "characters" => "chars",
             "decode"     => "decode"
         ),
-        "html_entity_decode" => array(
-            "html"   => "html",
-            "entity" => "entity",
-            "decode" => "decode"
-        ),
+        "html_entity_decode",
         "hypot" => array(
             "hypotenuse" => "hypot"
         ),
-        "ini_alter" => array(
-            "ini"   => "ini",
-            "alter" => "alter"
-        ),
-        "init_get" => array(
-            "ini" => "ini",
-            "get" => "get"
-        ),
-        "ini_get_all" => array(
-            "ini" => "ini",
-            "get" => "get",
-            "all" => "all"
-        ),
-        "ini_restore" => array(
-            "ini"     => "ini",
-            "restore" => "restore"
-        ),
-        "ini_set" => array(
-            "ini" => "ini",
-            "set" => "set"
-        ),
+        "ini_alter",
+        "init_get",
+        "ini_get_all",
+        "ini_restore",
+        "ini_set",
         "intdiv" => array(
             "integer"  => "int",
             "division" => "div"
         ),
-        "interface_exists" => array(
-            "interface" => "interface",
-            "exists"    => "exists"
-        ),
+        "interface_exists",
         "intval" => array(
             "integer" => "int",
             "value"   => "val"
         ),
-        "in_array" => array(
-            "in"    => "in",
-            "array" => "array"
-        ),
+        "in_array",
         "ip2long" => array(
             "ip"         => "ip",
             "_WILDCARD_" => "2",
@@ -1206,119 +878,43 @@ class PHPConsistentor
             "is"  => "is",
             "set" => "set"
         ),
-        "is_a" => array(
-            "is" => "is",
-            "a"  => "a"
-        ),
-        "is_array" => array(
-            "is"    => "is",
-            "array" => "array"
-        ),
+        "is_a",
+        "is_array",
         "is_bool" => array(
             "is"      => "is",
             "boolean" => "bool"
         ),
-        "is_callable" => array(
-            "is"       => "is",
-            "callable" => "callable"
-        ),
+        "is_callable",
         "is_dir" => array(
             "is"        => "is",
             "directory" => "dir"
         ),
-        "is_double" => array(
-            "is"     => "is",
-            "double" => "double"
-        ),
-        "is_executable" => array(
-            "is"         => "is",
-            "executable" => "executable"
-        ),
-        "is_file" => array(
-            "is"   => "is",
-            "file" => "file"
-        ),
-        "is_finite" => array(
-            "is"     => "is",
-            "finite" => "finite"
-        ),
-        "is_float" => array(
-            "is"    => "is",
-            "float" => "float"
-        ),
-        "is_infinite" => array(
-            "is"       => "is",
-            "infinite" => "infinite"
-        ),
-        "is_int" => array(
-            "is"      => "is",
-            "integer" => "int"
-        ),
-        "is_link" => array(
-            "is"   => "is",
-            "link" => "link"
-        ),
+        "is_double",
+        "is_executable",
+        "is_file",
+        "is_finite",
+        "is_float",
+        "is_infinite",
+        "is_int",
+        "is_link",
         "is_nan" => array(
             "is"     => "is",
             "not"    => "n",
             "a"      => "a",
             "number" => "n"
         ),
-        "is_null" => array(
-            "is"   => "is",
-            "null" => "null"
-        ),
-        "is_numeric" => array(
-            "is"      => "is",
-            "numeric" => "numeric"
-        ),
-        "is_object" => array(
-            "is"     => "is",
-            "object" => "object"
-        ),
-        "is_readable" => array(
-            "is"       => "is",
-            "readable" => "readable"
-        ),
-        "is_real" => array(
-            "is"   => "is",
-            "real" => "real"
-        ),
-        "is_resource" => array(
-            "is"       => "is",
-            "resource" => "resource"
-        ),
-        "is_scalar" => array(
-            "is"     => "is",
-            "scalar" => "scalar"
-        ),
-        "is_soap_fault" => array(
-            "is"    => "is",
-            "soap"  => "soap",
-            "fault" => "fault"
-        ),
-        "is_subclass_of" => array(
-            "is"       => "is",
-            "subclass" => "subclass",
-            "of"       => "of"
-        ),
-        "is_tainted" => array(
-            "is"      => "is",
-            "tainted" => "tainted"
-        ),
-        "is_uploaded_file" => array(
-            "is"       => "is",
-            "uploaded" => "uploaded",
-            "file"     => "file"
-        ),
-        "is_writable" => array(
-            "is"       => "is",
-            "writable" => "writable"
-        ),
-        "is_writeable" => array(
-            "is"        => "is",
-            "writeable" => "writeable"
-        )
+        "is_null",
+        "is_numeric",
+        "is_object",
+        "is_readable",
+        "is_real",
+        "is_resource",
+        "is_scalar",
+        "is_soap_fault",
+        "is_subclass_of",
+        "is_tainted",
+        "is_uploaded_file",
+        "is_writeable"
     );
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // End stupidly huge array with function names 'cause it's the easiest way to gather all functions and their aliases //
@@ -1360,6 +956,11 @@ class PHPConsistentor
 
         foreach(self::$_functions as $old => $function) {
             $new = "";
+
+            if(is_string($function)) {
+                $old      = $function;
+                $function = explode("_", $function);
+            }
 
             foreach($function as $key => $value) {
                 if($key == "_WILDCARD_") {
