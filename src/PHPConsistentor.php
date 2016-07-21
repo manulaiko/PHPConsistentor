@@ -237,11 +237,10 @@ class PHPConsistentor
             "associative" => "assoc"
         ),
         "array_udiff_uassoc" => array(
-            "array"       => "array",
-            "user"        => "u",
-            "difference"  => "diff",
-            "user"        => "u",
-            "associative" => "assoc"
+            "array"        => "array",
+            "user"         => "u",
+            "difference"   => "diff",
+            "uassociative" => "uassoc"
         ),
         "array_uintersect" => array(
             "array"     => "array",
@@ -255,11 +254,10 @@ class PHPConsistentor
             "associative" => "assoc"
         ),
         "array_uintersect_uassoc" => array(
-            "array"       => "array",
-            "user"        => "u",
-            "intersect"   => "intersect",
-            "user"        => "u",
-            "associative" => "assoc"
+            "array"        => "array",
+            "user"         => "u",
+            "intersect"    => "intersect",
+            "uassociative" => "uassoc"
         ),
         "array_unique",
         "array_unshift",
@@ -921,53 +919,182 @@ class PHPConsistentor
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Adds a function alias
+     * Configuration array
      *
-     * @param string $old The function that we will aliase
-     * @param string $new The new name of the function
-     *
-     * @return mixed Old function result
+     * @var array
      */
-    public static function alias($old, $new)
-    {
-        if(function_exists($new)) {
-            return;
-        }
+    private static $_configuration = [];
 
-        eval("function {$new}() {
-            \$args = func_get_args();
+    /**
+     * File resource
+     *
+     * @var resource
+     */
+    private static $_handler = null;
 
-            return call_user_func_array(
-                {$old},
-                \$args
-            );
-        }");
-    }
+    /**
+     * File name
+     *
+     * @var string
+     */
+    private static $_filename = "";
 
     /**
      * Inits PHPConsitentor
+     *
+     * Will parse the configuration array, check if there's a file for the given
+     * configuration already exists and include it/
      *
      * @param array $configuration Array containing configuration
      */
     public static function init($configuration = array())
     {
         // Assure that configuration array is properly set
-        $configuration = self::_checkConfiguration($configuration);
+        self::$_configuration = self::_checkConfiguration($configuration);
 
+        // Create cache directory if not exists
+        if(!is_dir("phpconsistentor_cache")) {
+            mkdir("phpconsistentor_cache");
+        }
+
+        self::$_filename = self::$_configuration["word_separator"] ."-". self::$_configuration["word_cut"] ."-". self::$_configuration["to_2"];
+
+        if(!file_exists("phpconsistentor_cache/". self::$_filename .".php")) {
+            self::$_handler = fopen("phpconsistentor_cache/". self::$_filename .".php", "a");
+
+            self::_writeHeader();
+            self::_parseFunctions();
+
+            fclose(self::$_handler);
+            self::$_handler = null;
+        }
+
+        require_once("phpconsistentor_cache/". self::$_filename .".php");
+    }
+
+    /**
+     * Adds a custom alias
+     *
+     * @param string $old The function that we will aliase
+     * @param string $new The new name of the function
+     */
+    public static function addAlias($old, $new)
+    {
+        if(self::$_filename == "") {
+            // Filename is empty, this means that user can't read documentation
+            // and called this method before PHPConsistentor::init
+            self::init();
+        }
+
+        self::$_handler = fopen("phpconsistentor_cache/". self::$_filename .".php", "a");
+        self::_alias($old, $new);
+        fclose(self::$_handler);
+        self::$_handler = null;
+    }
+
+    /**
+     * Writes the header to the functions file so it can be ready
+     * to write
+     */
+    private static function _writeHeader()
+    {
+        $filename = self::$_filename; //idk...
+
+        $word_separator = "Words aren't separated (functionname)";
+        if(self::$_configuration["word_separator"] == PHPConsistentor::WORD_SEPARATION_UNDERSCORE) {
+            $word_separator = "Words are separated by underscores (function_name)";
+        } else if(self::$_configuration["word_separator"] == PHPConsistentor::WORD_SEPARATION_CAMEL_CASE) {
+            $word_separator = "Words are separated by camel case (functionName)";
+        }
+
+        $word_cut = "Words are cutted (func_name)";
+        if(self::$_configuration["word_cut"] == PHPConsistentor::WORD_CUT_CUT) {
+            $word_cut = "Words aren't cutted (function_name)";
+        }
+
+        $to_2 = "'to'/'2' are the default (bin2hex, strtolower)";
+        if(self::$_configuration["to_2"] == PHPConsistentor::TO_2_TO) {
+            $to_2 = "'to'/'2' are translated to 'to' (bintohex, strtolower)";
+        } else if(self::$_configuration["to_2"] == PHPConsistentor::TO_2_2) {
+            $to_2 = "'to'/'2' are translated to '2' (bin2hex, str2lower)";
+        }
+
+        $header = "<?php
+/**
+ * PHPConsistentor - {$filename}
+ *
+ *  * Word separation:  {$word_separator}
+ *  * Word cutting:     {$word_cut}
+ *  * To/2 translation: {$to_2}
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
+ *
+ * @see https://github.com/manulaiko/PHPConsistentor/blob/master/README.md
+ */
+";
+        fwrite(self::$_handler, $header);
+    }
+
+    /**
+     * Appends a function to the functions files (If it's not already there
+     * and the file resource is opened)
+     *
+     * @param string $old The function that we will aliase
+     * @param string $new The new name of the function
+     *
+     * @return mixed Old function result
+     */
+    private static function _alias($old, $new)
+    {
+        if(
+            function_exists($new) ||
+            self::$_handler == null
+        ) {
+            return;
+        }
+
+        $function = "
+/**
+ * Alias for `{$old}`
+ *
+ * @see https://secure.php.net/manual-lookup.php?pattern={$old}&scope=quickref
+ *
+ * @return Original value returned by `{$old}`
+ */
+function {$new}() {
+    \$args = func_get_args();
+
+    return call_user_func_array(
+        \"{$old}\",
+        \$args
+    );
+}";
+        fwrite(self::$_handler, $function);
+    }
+
+    /**
+     * Parses the functions array and adds the aliases
+     */
+    private static function _parseFunctions()
+    {
         foreach(self::$_functions as $old => $function) {
             $new = "";
 
             if(is_string($function)) {
                 $old      = $function;
-                $function = explode("_", $function);
+                $function = array();
+
+                foreach(explode("_", $old) as $word) {
+                    $function[$word] = $word;
+                }
             }
 
             foreach($function as $key => $value) {
                 if($key == "_WILDCARD_") {
-                    if($configuration["to_2"] == PHPConsistentor::TO_2_TO) {
+                    if(self::$_configuration["to_2"] == PHPConsistentor::TO_2_TO) {
                         $key   = "to";
                         $value = "to";
-                    } else if($configuration["to_2"] == PHPConsistentor::TO_2_2) {
+                    } else if(self::$_configuration["to_2"] == PHPConsistentor::TO_2_2) {
                         $key   = "2";
                         $value = "2";
                     } else {
@@ -975,8 +1102,8 @@ class PHPConsistentor
                     }
                 }
 
-                if($configuration["word_separator"] == PHPConsistentor::WORD_SEPARATION_UNDERSCORE) {
-                    if($configuration["word_cut"] == PHPConsistentor::WORD_CUT_NO_CUT) {
+                if(self::$_configuration["word_separator"] == PHPConsistentor::WORD_SEPARATION_UNDERSCORE) {
+                    if(self::$_configuration["word_cut"] == PHPConsistentor::WORD_CUT_NO_CUT) {
                         $word = $key;
                     } else {
                         $word = $value;
@@ -989,8 +1116,8 @@ class PHPConsistentor
                             $new .= "_{$word}";
                         }
                     }
-                } else if($configuration["word_separator"] == PHPConsistentor::WORD_SEPARATION_CAMEL_CASE) {
-                    if($configuration["word_cut"] == PHPConsistentor::WORD_CUT_NO_CUT) {
+                } else if(self::$_configuration["word_separator"] == PHPConsistentor::WORD_SEPARATION_CAMEL_CASE) {
+                    if(self::$_configuration["word_cut"] == PHPConsistentor::WORD_CUT_NO_CUT) {
                         $word = $key;
                     } else {
                         $word = $value;
@@ -1004,7 +1131,7 @@ class PHPConsistentor
                         }
                     }
                 } else {
-                    if($configuration["word_cut"] == PHPConsistentor::WORD_CUT_NO_CUT && !empty($key)) {
+                    if(self::$_configuration["word_cut"] == PHPConsistentor::WORD_CUT_NO_CUT && !empty($key)) {
                         $new .= $key;
                     } else if(!empty($value)){
                         $new .= $value;
@@ -1012,7 +1139,7 @@ class PHPConsistentor
                 }
             }
 
-            self::alias($old, $new);
+            self::_alias($old, $new);
         }
     }
 
